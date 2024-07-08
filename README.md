@@ -16,25 +16,23 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## About project
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+This project is based on the TMDB API. Here you can search for movies by name or other criteria.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Simple Seach
 
-## Learn More
+* **Search by name:** Use the navbar input search to find movies by name.
 
-To learn more about Next.js, take a look at the following resources:
+## Advance Search
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Advanced search is a layout where you can search for movies using different criteria. These include:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* **Search by Genres:** Search for movies by genre. For example, you can search for movies in the "Comedy" genre.
+* **Search by Cast:** Search for movies by actor name. For example, you can search for movies in which "Will Smith" acted.
+* **Search by Company:** Search for movies by film producer. For example, you can search for movies produced by "Warner Bros."
+* **Search by Keywords:** Search for movies by keyword. If you don’t remember the name of a movie about "space wars," you can write "space" and you will see the movies related to "space."
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  This is a example of mixing search:
+  ![1720448374290](image/README/1720448374290.png)
