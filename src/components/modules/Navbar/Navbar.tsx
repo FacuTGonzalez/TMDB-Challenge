@@ -82,11 +82,6 @@ export const Navbar = () => {
           )}
         </div>
       </div>
-      <div className='flex items-center space-x-4'>
-        <button className='text-white focus:outline-none'>
-          Iniciar sesión
-        </button>
-      </div>
     </nav>
   );
 };
