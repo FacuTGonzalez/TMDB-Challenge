@@ -20,6 +20,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 This project is based on the TMDB API. Here you can search for movies by name or other criteria.
 
+The stack of project is:
+
+* Next.js
+* React
+* Redux
+* TypeScript
+* Tailwind
 
 ## Simple Seach
 
