@@ -24,9 +24,6 @@ export interface Movie {
 }
 
 export interface MoviesState {
-  popular: Movie[];
-  topRated: Movie[];
-  nowPlaying: Movie[];
   searched: Movie[];
   advanceSearch: Movie[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
