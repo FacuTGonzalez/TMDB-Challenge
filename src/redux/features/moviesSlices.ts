@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { moviesService } from '../services/moviesService/moviesService';
 import { Movie, MoviesState } from '../../models/movies.model';
+import { Filter, SearchKeys } from '@/models/search.model';
 
 export const getPopularMovies = createAsyncThunk(
   'movies/getPopularMovies',
@@ -36,15 +37,34 @@ export const getSearchMovies = createAsyncThunk(
 
 export const getSearchAdvanceMovies = createAsyncThunk(
   'movies/getSearchAdvanceMovies',
-  async ({ query, key }: { query: string; key: string }, thunkAPI) => {
-    switch (key) {
-      case 'genre':
-        const moviesGenre = await moviesService.getSearchByGenre(query);
-        return moviesGenre;
+  async (filters: Filter[], thunkAPI) => {
+    try {
+      const updatedFilters = await Promise.all(
+        filters.map(async (filter) => {
+          if (filter.key === SearchKeys.CAST && filter.value !== '') {
+            const personResponse = await moviesService.getPerson(filter.value);
+            if (personResponse.results && personResponse.results.length > 0) {
+              return { ...filter, value: personResponse.results[0].id.toString() };
+            }
+          } else if (filter.key === SearchKeys.COMPANIES && filter.value !== '') {
+            const companyResponse = await moviesService.getCompany(filter.value);
+            if (companyResponse.results && companyResponse.results.length > 0) {
+              return { ...filter, value: companyResponse.results[0].id.toString() };
+            }
+          } else if (filter.key === SearchKeys.KEYWORDS && filter.value !== '') {
+            const keywordResponse = await moviesService.getKeyword(filter.value);
+            if (keywordResponse.results && keywordResponse.results.length > 0) {
+              return { ...filter, value: keywordResponse.results[0].id.toString() };
+            }
+          }
+          return filter;
+        })
+      );
 
-      default:
-        const movies = await moviesService.getSearch(query, key);
-        return movies;
+      const moviesGenre = await moviesService.getAdvanceSearch(updatedFilters);
+      return moviesGenre;
+    } catch (error: any) {
+      return thunkAPI.rejectWithValue({ error: error.message });
     }
   }
 );

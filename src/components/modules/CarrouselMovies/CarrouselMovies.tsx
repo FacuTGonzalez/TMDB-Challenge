@@ -25,6 +25,23 @@ export const CarrouselMovies = ({
         navigation={true}
         modules={[Navigation]}
         className='p-3'
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+          1280: {
+            slidesPerView: slidesPerView,
+          },
+        }}
       >
         {movies.length > 0 &&
           movies.map((movie) => (

@@ -5,8 +5,11 @@ export const moviesRoutes = {
   getPopular: () => `${BASE_URL}/3/movie/popular`,
   getNowPlaying: () => `${BASE_URL}/3/movie/now_playing`,
   searchMovie: (key: string) => `${BASE_URL}/3/search/${key}`,
-  searchMovieByGenre: (gender: string) => `${BASE_URL}/3/discover/movie?with_genres=${gender}`,
+  advanceSearchMovie: (filters: string) => `${BASE_URL}/3/discover/movie?${filters}`,
   getMovieById: (id: string) => `${BASE_URL}/3/movie/${id}`,
   getSimilarMovies: (id: string) => `${BASE_URL}/3/movie/${id}/similar`,
   getMovieVideos: (id: string) => `${BASE_URL}/3/movie/${id}/videos`,
+  getPerson: () => `${BASE_URL}/3/search/person`,
+  getCompany: () => `${BASE_URL}/3/search/company`,
+  getKeyword: () => `${BASE_URL}/3/search/keyword`,
 };

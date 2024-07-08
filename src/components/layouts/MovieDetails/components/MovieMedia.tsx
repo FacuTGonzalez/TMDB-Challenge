@@ -7,7 +7,7 @@ type MovieMediaProps = {
 
 export const MovieMedia = ({ poster }: MovieMediaProps) => {
   return (
-    <div className='flex-shrink-0 w-full md:w-1/3 mb-8 md:mb-0'>
+    <div className='flex-shrink-0 w-full mb-8 md:mb-0 md:w-1/3'>
       <img
         src={`https://image.tmdb.org/t/p/w500${poster}`}
         alt='Poster'

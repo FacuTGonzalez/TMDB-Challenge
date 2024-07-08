@@ -5,7 +5,16 @@ export interface Filter {
 
 export interface Options {
     label: string;
-    value: MovieGenres;
+    value: MovieGenres| string;
+}
+
+export enum SearchKeys{
+  GENRES = 'genres',
+  CAST = 'cast',
+  QUERY = 'query',
+  YEAR = 'year',
+  COMPANIES = 'companies',
+  KEYWORDS = 'keywords',
 }
 
 export enum MovieGenres {
