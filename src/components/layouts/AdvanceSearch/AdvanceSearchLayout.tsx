@@ -5,6 +5,7 @@ import { Filter } from '@/models/search.model';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { getSearchAdvanceMovies } from '@/redux/features/moviesSlices';
 import { SearchItem } from '@/components/modules/SearchList/components/SearchItem';
+import styles from './AdvanceSearchLayout.module.scss'
 
 export const AdvanceSearchLayout = () => {
   const [filter, setFilter] = useState<Filter[]>([]);
@@ -34,7 +35,7 @@ export const AdvanceSearchLayout = () => {
   return (
     <div className="p-4">
       <HeaderAdvanceSearch />
-      <div className="flex flex-col md:flex-row w-full">
+      <div className={`${styles.containerSearch} flex flex-col md:flex-row w-full`}>
         <div className="w-full md:w-2/5">
           <FiltersCard onSearch={onSearch} onChangeFilter={onChangeFilter} />
         </div>

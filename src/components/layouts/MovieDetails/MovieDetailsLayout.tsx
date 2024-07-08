@@ -19,7 +19,7 @@ export const MovieDetailsLayout = ({
   movieVideos,
 }: MovieDetailProps) => {
   return (
-    <div className='flex flex-col justify-center container mx-auto px-4'>
+    <div className='flex flex-col justify-center container px-4'>
       <div className='bg-gray-900 text-white min-h-screen p-8'>
         <div className='container mx-auto'>
           <MovieHeader
@@ -40,7 +40,7 @@ export const MovieDetailsLayout = ({
       <div className='bg-gray-900 text-white min-h-screen p-8 mt-4'>
         <MovieTrailer videos={movieVideos} />
       </div>
-      <div className='max-w-7xl'>
+      <div>
         <CarrouselMovies title='Títulos similares' movies={similarMovies} />
       </div>
     </div>
